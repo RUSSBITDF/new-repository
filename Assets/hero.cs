@@ -18,5 +18,14 @@ public class hero : MonoBehaviour
         moveVector.x = Input.GetAxis("Horizontal");
         moveVector.y = Input.GetAxis("Vertical");
         rb.MovePosition(rb.position + moveVector * speed * Time.deltaTime);
+    }  
+private void OnCollisionEnter2D(Collision2D collision)
+{
+    if(collision.gameObject.tag == "ground") {
+        Debug.Log("Столкнулись");
     }
 }
+
+}   
+
+
